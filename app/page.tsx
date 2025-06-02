@@ -11,39 +11,41 @@ export default async function Home() {
   });
 
   return (
-    <div>
-      <section className="rounded bg-neutral-100 py-8 sm:py-12">
-        <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
-          <div className="max-w-md space-y-4">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Welcome to My Ecommerce
-            </h2>
-            <p className="text-neutral-600">
-              Discover the latest products at the best prices.
-            </p>
-            <Button
-              asChild
-              variant="default"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-black text-white"
+    <div className="bg-gradient-to-b from-white to-blue-50 min-h-screen">
+      <section className="rounded-xl bg-white/80 shadow-lg py-12 sm:py-16 mb-12 mt-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6 md:px-12">
+        <div className="flex-1 space-y-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4 leading-tight">
+            Welcome to <span className="text-blue-600">Ecommerce</span>
+          </h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Discover the latest products at the best prices. Shop with confidence and enjoy fast delivery.
+          </p>
+          <Button
+            asChild
+            variant="default"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 bg-blue-600 text-white text-lg font-semibold shadow-lg hover:bg-blue-700 transition-colors"
+          >
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center rounded-full px-8 py-4"
             >
-              <Link
-                href="/products"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3"
-              >
-                Browse All Products
-              </Link>
-            </Button>
-          </div>
+              Browse All Products
+            </Link>
+          </Button>
+        </div>
+        <div className="flex-1 flex justify-center">
           <Image
             alt="Hero Image"
             src={products.data[1].images[0]}
-            className="rounded"
-            width={450}
-            height={450}
+            className="rounded-xl shadow-xl object-cover"
+            width={400}
+            height={400}
+            priority
           />
         </div>
       </section>
-      <section className="py-8">
+      <section className="py-8 max-w-5xl mx-auto">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Featured Products</h3>
         <Carousel products={products.data}/>
       </section>
     </div>

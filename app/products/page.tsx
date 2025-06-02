@@ -7,10 +7,13 @@ export default async function ProductsPage() {
   });
 
   return (
-    <div className="pb-8">
-      <h1 className="text-3xl font-bold leading-none tracking-tight text-foreground text-center mb-8">
+    <div className="bg-gradient-to-b from-white to-blue-50 min-h-screen py-10">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 text-center mb-10 mt-4">
+          All Products
+        </h1>
         <ProductList products={products.data} />
-      </h1>
+      </div>
     </div>
   );
 }
